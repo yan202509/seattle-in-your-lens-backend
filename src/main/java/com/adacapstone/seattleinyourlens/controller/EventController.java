@@ -1,6 +1,5 @@
 package com.adacapstone.seattleinyourlens.controller;
 
-
 import com.adacapstone.seattleinyourlens.entity.Event;
 import com.adacapstone.seattleinyourlens.service.EventService;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +10,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/events")
 @RequiredArgsConstructor
+@CrossOrigin("*")
+
 public class EventController {
 
     private final EventService eventService;
@@ -26,5 +27,4 @@ public class EventController {
     public List<Event> getAllEvents() {
         return eventService.getAllEvents();
     }
-
 }
