@@ -19,7 +19,7 @@ public class Event {
     private String event_description;
     private String event_season;
     private String event_type;
-    private String cost_level; 
+    private String cost_level;
     private LocalDateTime event_date;
 
 
