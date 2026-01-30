@@ -1,6 +1,5 @@
 package com.adacapstone.seattleinyourlens.service;
 
-
 import com.adacapstone.seattleinyourlens.entity.Event;
 import com.adacapstone.seattleinyourlens.repository.EventRepository;
 import lombok.RequiredArgsConstructor;
@@ -26,5 +25,12 @@ public class EventService {
         return eventRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Event not found with id " + id));
     }
+
+    public Event likeEvent(Long id) {
+        Event event = getEventById(id);
+        event.setLikes(event.getLikes() + 1);
+        return eventRepository.save(event);
+    }
+
 
 }

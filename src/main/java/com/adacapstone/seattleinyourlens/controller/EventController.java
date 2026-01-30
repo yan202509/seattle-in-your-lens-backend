@@ -32,4 +32,9 @@ public class EventController {
     public Event getEventById(@PathVariable Long id) {
         return eventService.getEventById(id);
     }
+    @PatchMapping("/{id}/like")
+    public Event likeEvent(@PathVariable Long id) {
+        return eventService.likeEvent(id);
+    }
+
 }
