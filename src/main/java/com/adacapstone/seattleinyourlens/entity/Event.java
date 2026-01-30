@@ -21,5 +21,5 @@ public class Event {
     private String event_type;
     private String cost_level;
     private LocalDateTime event_date;
-    private int likes = 0;
+    private Integer likes = 0;
 }
