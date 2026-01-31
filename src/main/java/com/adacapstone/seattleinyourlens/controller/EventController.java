@@ -37,4 +37,13 @@ public class EventController {
         return eventService.likeEvent(id);
     }
 
+    @DeleteMapping("/{id}")
+    public void deleteEvent(@PathVariable Long id) {
+        eventService.deleteEvent(id);
+    }
+
+
+
+
+
 }

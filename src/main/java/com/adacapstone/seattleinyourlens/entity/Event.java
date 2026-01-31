@@ -24,8 +24,14 @@ public class Event {
     private LocalDateTime event_date;
     private Integer likes = 0;
 
-    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    //orphanRemoval means to delete comments as well when event is deleted
+    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
 
     @JsonIgnoreProperties("event")
     private List<Review> reviews = new ArrayList<>();
+
+    // This links the Event to a User
+    @ManyToOne
+    @JoinColumn(name = "user_id") // This creates the column in your DB
+    private User creator;
 }

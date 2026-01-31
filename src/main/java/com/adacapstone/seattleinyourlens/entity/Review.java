@@ -26,7 +26,7 @@ public class Review {
     @JsonIgnoreProperties("reviews")
     private Event event;
 
-    @PrePersist // it fix the null problem of not required user to enter a time
+    @PrePersist // Fixed the null problem of not required user to enter a time
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();
     }

@@ -32,5 +32,7 @@ public class EventService {
         return eventRepository.save(event);
     }
 
-
+    public void deleteEvent(Long id) {
+        eventRepository.deleteById(id);
+    }
 }
