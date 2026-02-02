@@ -32,6 +32,7 @@ public class Event {
 
     // This links the Event to a User
     @ManyToOne
-    @JoinColumn(name = "user_id") // This creates the column in your DB
+    @JoinColumn(name = "user_id")
+    @JsonIgnoreProperties("events")
     private User creator;
 }
