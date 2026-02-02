@@ -42,6 +42,14 @@ public class EventController {
         eventService.deleteEvent(id);
     }
 
+    // Inside your EventController.java
+
+    @GetMapping("/search")
+    public List<Event> searchEvents(@RequestParam String query) {
+        // This receives the 'query' from the URL: /api/events/search?query=seattle
+        return eventService.searchEvents(query);
+    }
+
 
 
 

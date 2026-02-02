@@ -16,8 +16,11 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long event_id;
 
-    private String event_title;
-    private String event_description;
+    // the naming convention is off, and must use CamelCase to make search bar work
+    @Column(name = "event_title")
+    private String eventTitle;
+    @Column(name = "event_description")
+    private String eventDescription;
     private String event_season;
     private String event_type;
     private String cost_level;

@@ -36,5 +36,10 @@ public class EventService {
         eventRepository.deleteById(id);
     }
 
+    // look in sql for the data
+    public List<Event> searchEvents(String query) {
+        return eventRepository.findByEventTitleContainingIgnoreCaseOrEventDescriptionContainingIgnoreCase(query, query);
+    }
+
 
 }
