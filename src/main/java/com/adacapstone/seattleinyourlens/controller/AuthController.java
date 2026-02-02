@@ -6,14 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/api")
 @CrossOrigin(origins = {"http://localhost:5173", "https://seattle-in-your-lens-frontend.vercel.app"})
+@RequiredArgsConstructor
+
 public class AuthController {
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody User loginRequest) {
