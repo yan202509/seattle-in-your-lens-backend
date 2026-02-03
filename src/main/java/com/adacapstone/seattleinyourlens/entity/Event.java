@@ -18,10 +18,11 @@ public class Event {
     private Long event_id;
 
     // the naming convention is off, and must use CamelCase to make search bar work
-    private String event_title;
+    @Column(name = "event_title")
+    private String eventTitle;
 
     private String event_description;
-    
+
     private String event_season;
     private String event_type;
     private String cost_level;

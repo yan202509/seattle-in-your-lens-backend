@@ -37,9 +37,9 @@ public class EventService {
     }
 
     // look in sql for the data
-//    public List<Event> searchEvents(String query) {
-//        return eventRepository.findByEventTitleContainingIgnoreCaseOrEventDescriptionContainingIgnoreCase(query, query);
-//    }
+    public List<Event> searchEvents(String query) {
+        return eventRepository.findByEventTitleContainingIgnoreCase(query);
+    }
 
 
 }
