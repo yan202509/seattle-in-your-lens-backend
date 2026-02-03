@@ -1,6 +1,7 @@
 package com.adacapstone.seattleinyourlens.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -17,10 +18,10 @@ public class Event {
     private Long event_id;
 
     // the naming convention is off, and must use CamelCase to make search bar work
-    @Column(name = "event_title")
-    private String eventTitle;
-    @Column(name = "event_description")
-    private String eventDescription;
+    private String event_title;
+
+    private String event_description;
+    
     private String event_season;
     private String event_type;
     private String cost_level;
