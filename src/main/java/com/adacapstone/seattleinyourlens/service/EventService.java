@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+// what do we want to do with this data coming from frontend
+
 @Service
 @RequiredArgsConstructor
 public class EventService {
@@ -17,12 +19,17 @@ public class EventService {
         return eventRepository.save(event);
     }
 
+    public List<Event> findAllWithDetails() {
+        // This calls the @EntityGraph method in your Repo
+        return eventRepository.findAllWithDetails();
+    }
+
     public List<Event> getAllEvents() {
         return eventRepository.findAll();
     }
 
     public Event getEventById(Long id) {
-        return eventRepository.findById(id)
+        return eventRepository.findByIdWithDetails(id)
                 .orElseThrow(() -> new RuntimeException("Event not found with id " + id));
     }
 
@@ -36,7 +43,7 @@ public class EventService {
         eventRepository.deleteById(id);
     }
 
-    // look in sql for the data
+    // for search bar; look in sql for the data
     public List<Event> searchEvents(String query) {
         return eventRepository.findByEventTitleContainingIgnoreCase(query);
     }

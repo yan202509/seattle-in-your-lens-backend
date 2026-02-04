@@ -12,6 +12,8 @@ import java.util.List;
 @RequiredArgsConstructor
 @CrossOrigin("*")
 
+// getting the data from frontend
+
 public class EventController {
 
     private final EventService eventService;
@@ -24,8 +26,9 @@ public class EventController {
 
     @GetMapping
     public List<Event> getAllEvents() {
-        return eventService.getAllEvents();
+        return eventService.findAllWithDetails();
     }
+
 
     @GetMapping("/{id}")
     public Event getEventById(@PathVariable Long id) {

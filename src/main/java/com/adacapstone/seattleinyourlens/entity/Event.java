@@ -30,7 +30,7 @@ public class Event {
     private Integer likes = 0;
 
     //orphanRemoval means to delete comments as well when event is deleted
-    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
 
     @JsonIgnoreProperties("event")
     private List<Review> reviews = new ArrayList<>();
