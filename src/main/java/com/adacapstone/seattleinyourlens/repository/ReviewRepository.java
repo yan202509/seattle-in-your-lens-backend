@@ -13,4 +13,3 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
     @Query("SELECT r FROM Review r WHERE r.event.event_id = :eventId")
     List<Review> findByEvent_Event_id(Long eventId);
 }
-
