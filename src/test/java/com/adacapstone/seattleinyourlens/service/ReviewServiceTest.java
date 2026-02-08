@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 @ActiveProfiles("local")
 @Transactional
-class ReviewServiceTest {
+public class ReviewServiceTest {
 
     @Autowired
     private ReviewService reviewService;
