@@ -68,7 +68,7 @@ class EventServiceTest {
         // Act
         eventService.deleteEvent(1L);
 
-        // Assert: In a delete, we just verify the repository's delete method was called
+        // Assert: In delete, we just verify the repository's delete method was called
         verify(eventRepository, times(1)).deleteById(1L);
     }
 }
