@@ -20,8 +20,8 @@ public class EventService {
     }
 
     public List<Event> findAllWithDetails() {
-        // This calls the @EntityGraph method in your Repo
-        // earlier it was only getAllEvents which cost
+        // This calls the @EntityGraph method in EventRepository
+        // earlier it was only getAllEvents which cost many data grab
         return eventRepository.findAllWithDetails();
     }
 
