@@ -25,6 +25,8 @@ public class EventController {
     }
 
     @GetMapping
+    // retrieves the "Creator" and "Comments" at once, more efficient
+    // not making many small, slow calls
     public List<Event> getAllEvents() {
         return eventService.findAllWithDetails();
     }

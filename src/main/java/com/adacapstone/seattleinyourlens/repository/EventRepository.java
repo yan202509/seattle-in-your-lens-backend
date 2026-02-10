@@ -23,6 +23,7 @@ import java.util.Optional;
 public interface EventRepository extends JpaRepository<Event, Long> {
 
     // This tells Hibernate: "Be EAGER just for the homepage"
+    // only grabs the creator and reviews data at once
     @EntityGraph(attributePaths = {"creator", "reviews"})
     @Query("SELECT e FROM Event e")
     List<Event> findAllWithDetails();

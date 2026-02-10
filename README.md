@@ -4,7 +4,7 @@ Backend service for **Seattle In Your Lens**, a community-driven web app where u
 This API handles **event data**, **user accounts**, and **reviews**, providing the core functionality for the frontend to display events and collect user feedback.
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Language:** Java 
 - **Framework:** Spring Boot 
@@ -16,7 +16,7 @@ This API handles **event data**, **user accounts**, and **reviews**, providing t
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 The application follows a standard **Layered Architecture** to ensure separation of concerns:
 
@@ -26,9 +26,9 @@ The application follows a standard **Layered Architecture** to ensure separation
 
 ---
 
-## 🛣️ API Endpoints
+## API Endpoints
 
-### 📍 Events
+### Events
 | Method                 | Endpoint                | Description                                |
 |:-----------------------|:------------------------|:-------------------------------------------|
 | **GET**                | `/api/events`           | Get all events (supports search/filtering) |
@@ -38,20 +38,20 @@ The application follows a standard **Layered Architecture** to ensure separation
 | **PATCH**              | `/api/events/{id}/like` | Increment the like counter for an event    |
 | **GET**                | `/api/events/search `   | Search events by query string   |
 
-### 💬 Reviews
+### Reviews
 | Method | Endpoint | Description |
 |:--- |:--- |:--- |
 | **POST** | `/api/events/{id}/reviews` | Add a rating (1–5) and comment |
 | **GET** | `/api/events/{id}/reviews` | Retrieve all reviews for a specific event |
 
-### 🔑 Authentication
+### Authentication
 | Method | Endpoint     | Description |
 |:--- |:-------------|:--- |
 | **POST** | `/api/login` | Validates credentials and returns User details |
 
 ---
 
-# 📊 Database Schema
+# Database Schema
 
 The backend of **Seattle In Your Lens** uses a relational database with three core entities: **User**, **Event**, and **Review**. These entities are connected via standard one-to-many and many-to-one relationships to support event creation and user reviews.
 
@@ -107,7 +107,7 @@ Represents user feedback associated with a specific event.
 
 ---
 
-## 🔗 Entity Relationship Overview (ER-Style)
+## Entity Relationship Overview (ER-Style)
 
 User
 └───< creates
@@ -115,7 +115,7 @@ Event
 └───< has
 Review
 
-## ⚙️ Running the Application
+## Running the Application
 - Using IntelliJ IDEA (Recommended)
 - Open the project in IntelliJ.
 - Let Maven import all dependencies 
@@ -123,7 +123,7 @@ Review
 Click the green Run button.
 
 
-## ⚙️ Environment Variables
+## Environment Variables
 
 To run this project locally, create an `application.properties` file or set the following variables:
 
